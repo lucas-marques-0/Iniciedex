@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.body {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #EFF4FA 0%, rgba(239, 244, 250, 0) 102.84%);
+}
+
+.logo {
+    padding-bottom: 10px;
+}
+
+.top-infos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.top-texto {
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 55px;
+    line-height: 60px;
+    color: #2F3E77;
+    padding-bottom: 15px;
+}
+
+.top-texto span {
+    color: #EA686D;
+}
+
+.top-subtexto {
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    color: #2F3E77;
+    padding-bottom: 15px;
+}
+
+.top-pesquisar input {
+    box-sizing: border-box;
+    width: 333px;
+    height: 44px;
+    background: #FFFFFF;
+    border: 1px solid #F4F4F4;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 5px 0px 0px 5px;
+    font-size: 1.2rem;
+}
+
+.top-pesquisar button {
+    width: 108px;
+    height: 43px;
+    background: #EA686D;
+    box-shadow: 0px 4px 15px #EA686D;
+    border-radius: 0px 5px 5px 0px;
+    border: none;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+.input-pesquisa {
+    padding-left: 10px;
+    outline: none;
+}
+
+.card {
+    width: 162px;
+    height: 302px;
+    filter: drop-shadow(0px 15px 15px rgba(234, 104, 109, 0.1));
+    border-radius: 10px;
+    position: relative;
+}
+
+.c1 {
+    top: 45px;
+}
+
+.c2 {
+    top: 115px;
+}
+
+.c3 {
+    top: 30px;
+}
+
+.espacamento-card {
+    display: flex;
+    justify-content: space-between;
+}
+
+.botoes {
+    display: flex;
+}
+
+.bottom-infos {
+    margin: 30px;
+}
+
+.bottom-infos h3 {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 30px;
+    color: #2F3E77;
+}
+
+.btnNavegacao {
+    width: 32px;
+    height: 32px;
+    background: #EA686D;
+    box-shadow: 0px 15px 15px rgba(234, 104, 109, 0.1);
+    padding: 10px;
+    border-radius: 50%;
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border: none;
+    margin-right: 5px;
+}
+
+.bottom-infos .bottom-parte1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.pokemon-grid {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.pokemon-card {
+    padding: 10px;
+    background: #FFFFFF;
+    border-radius: 2px;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 550;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: #233674;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.nome-pokemon {
+    font-weight: 700;
+}
+
+.imagem-pokemon {
+    width: 130px;
+}
+
+.imagem-pokemon-container {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.pokemon-card-link {
+    text-decoration: none;
+    color: #233674;
+}
+
+.pokemon-card-link:active {
+    outline: none;
+    box-shadow: none;
+    color: #233674;
+}
+
+.pokemon-card-link:visited {
+    color: #233674;
+}
+
+.alerta-div {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    background-color: rgb(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alerta-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 25px;
+    gap: 20px;
+    border-radius: 10px;
+    background-color: #fcf8e3;
+    border: 1px solid #233674;
+    color: #8a6d3b;
+    font-family: 'Nunito', sans-serif;
+    color: #233674;
+    width: 300px;
+    text-align: center;
+}
+
+.icone-alerta {
+    width: 150px;
+}
+
+.btn-alerta {
+    background-color: #FECB12;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn-alerta:hover {
+    background-color: #fecb1290;
+}
+
+@media screen and (max-width: 1370px) {
+    .top-infos {
+        padding: 30px;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 1020px) and (max-width: 1370px) {
+    .top-parte2 {
+        width: 75%;
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+@media screen and (max-width: 1020px) {
+    .top-infos {
+        flex-direction: column-reverse;
+        margin-bottom: 0px;
+        padding-top: 0px;
+    }
+
+    .pokemon-grid {
+        grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+    }
+
+    .top-parte2 {
+        margin-bottom: 100px;
+    }
+}
+
+
+@media screen and (max-width: 565px) {
+    .card {
+        width: 122px;
+        height: 242px;
+    }
+
+    .top-pesquisar input {
+        width: 80%;
+    }
+
+    .top-pesquisar button {
+        width: 20%;
+    }
+
+    .pokemon-grid {
+        grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr;
+    }
+}

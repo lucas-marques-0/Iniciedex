@@ -1,0 +1,60 @@
+<!-- Estrutura da tela Home (inicial) -->
+<div class="body">
+    <div class="top-infos">
+        <div class="top-parte1">
+            <img src="../../../assets/logo-inicie.png" alt="logo da Inicie">
+            <p class="top-texto">Explore o mundo dos <span>Pokémons</span></p>
+            <p class="top-subtexto">Descubra todas as espécies de Pokémons</p>
+            <div class="top-pesquisar">
+                <input type="text" [(ngModel)]="pokemonPesquisa" placeholder="Digite o número ou nome" class="input-pesquisa" (keyup.enter)='searchPokemon()'>
+                <button (click)="searchPokemon()">Buscar</button>
+            </div>
+        </div>
+        <div class="top-parte2">
+            <img class="card c1" src="../../../assets/blastoise-retangulo.png" alt="card do pokemon blastoise">
+            <img class="card c2" src="../../../assets/squirtle-retangulo.png" alt="card do pokemon squirtle">
+            <img class="card c3" src="../../../assets/pikachu-retangulo.png" alt="card do pokemon pikachu">
+        </div>
+    </div>
+    <div class="bottom-infos">
+        <div class="bottom-parte1">
+            <div>
+                <h3>Pokédex</h3>
+            </div>
+            <div class="botoes"><button class="btnNavegacao" (click)="pokemonsAnt()">&lt;</button><button class="btnNavegacao" (click)="pokemonsProx()">&gt;</button></div>
+        </div>
+        <div class="bottom-parte2">
+            <div class="pokemon-grid">
+                <div class="pokemon-card" *ngFor="let pokemon of pokemons">
+                    <a class="pokemon-card-link" [routerLink]="['/pokemon', pokemon['id']]">
+                        <div class="espacamento-card">
+                            <span class="nome-pokemon">{{ formatarTexto(pokemon['name']) }}</span>
+                            <span>#{{ pokemon['id'] }}</span>
+                        </div>
+                        <div class="imagem-pokemon-container">
+                            <img class="imagem-pokemon" src="{{ pokemon['sprites']['other']['official-artwork']['front_default'] }}" alt="imagem do pokemon">
+                        </div>
+                        <div class="espacamento-card">
+                            <span>Altura:</span>
+                            <span>{{ pokemon['height'] }}cm</span>
+                        </div>
+                        <div class="espacamento-card">
+                            <span>Peso:</span>
+                            <span>{{ pokemon['weight'] }}Kg</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de aviso caso a pesquisa não funcione -->
+<div class="alerta-div" *ngIf="naoEncontrado">
+    <div class="alerta-modal">
+        <img src="../../../assets/icone-alerta.png" class="icone-alerta" alt="icone de alerta">
+        <h3>Pokemon não encontrado :/</h3>
+        <p>Certifique-se que está digitando o número ou nome correto.</p>
+        <button class="btn-alerta" (click)="naoEncontrado = false"><b>OK!</b></button>
+    </div>
+</div>

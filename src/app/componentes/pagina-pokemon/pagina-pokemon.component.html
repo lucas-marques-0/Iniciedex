@@ -1,0 +1,60 @@
+<!-- Estrutura da tela Específica do Pokemon -->
+<div class="body">
+    <div class="left-infos">
+        <img src="../../../assets/logo-inicie.png" [routerLink]="['']" class="logo-inicie" alt="logo da Inicie">
+        <h1 class="texto-destaque mb-10">{{ formatarTexto(pokemon['name']) }}</h1>
+        <div class="dividir mb-30">
+            <span class="texto-maior mr-15"><b class="mr-5">Cod:</b>#{{ pokemon['id'] }}</span>
+            <span class="texto-maior"><b class="mr-10">Tipo:</b><span class="tipo-pokemon" [style.backgroundColor]="corTipoPokemon">{{ formatarTexto(pokemon['types'][0]['type']['name']) }}</span></span>
+        </div>
+        <div class="mb-30">
+            <h2 class="texto-maior mb-10">Descrição</h2>
+            <p class="texto-menor"> "{{ formatarTexto(descricaoPokemon) }}" </p>
+        </div>
+        <div class="mb-30">
+            <h2 class="texto-maior mb-10">Informações</h2>
+            <div class="dividir texto-normal">
+                <span class="mb-10">Altura:</span>
+                <span>{{ pokemon['height'] }}cm</span>
+            </div>
+            <div class="dividir texto-normal">
+                <span>Peso:</span>
+                <span>{{ pokemon['weight'] }}Kg</span>
+            </div>
+        </div>
+        <div>
+            <div class="atributos-container">
+                <div class="atributo">
+                    <span class="atributo-nome">Vida:</span>
+                    <div class="grafico">
+                        <div class="barraVd" [style.width.%]="(atributoVida / 200) * 100"></div>
+                    </div>
+                </div>
+
+                <div class="atributo">
+                    <span class="atributo-nome">Defesa:</span>
+                    <div class="grafico">
+                        <div class="barraDf" [style.width.%]="(atributoDefesa / 200) * 100"></div>
+                    </div>
+                </div>
+
+                <div class="atributo">
+                    <span class="atributo-nome">Velocidade:</span>
+                    <div class="grafico">
+                        <div class="barraVl" [style.width.%]="(atributoVelocidade / 200) * 100"></div>
+                    </div>
+                </div>
+
+                <div class="atributo">
+                    <span class="atributo-nome">Ataque:</span>
+                    <div class="grafico">
+                        <div class="barraAt" [style.width.%]="(atributoAtaque / 200) * 100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right-infos">
+        <img class="pokemon-imagem" src="{{ pokemon['sprites']['other']['official-artwork']['front_default'] }}" alt="arte do pokemon">
+    </div>
+</div>
